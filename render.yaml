@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: office-admin-backend
+    env: node
+    plan: free
+    region: frankfurt
+    buildCommand: |
+      cd backend
+      npm ci
+    startCommand: |
+      cd backend
+      node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false
+      - key: CORS_ORIGIN
+        value: https://panel.deposist.az,https://deposist.az,https://www.deposist.az
+
