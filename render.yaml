@@ -5,7 +5,7 @@ services:
     plan: free
     region: frankfurt
     buildCommand: npm --prefix backend ci
-    startCommand: node backend/server.js
+    startCommand: npm --prefix backend start
     envVars:
       - key: NODE_ENV
         value: production
