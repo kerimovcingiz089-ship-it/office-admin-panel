@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "package.json", "use": "@vercel/static-build" }
+  ],
+  "env": {
+    "VITE_API_URL": "https://panel-api.deposist.az/api"
+  },
+  "routes": [
+    { "src": "/assets/(.*)", "dest": "/dist/assets/$1" },
+    { "src": "/(.*)", "dest": "/dist/index.html" }
+  ]
+}
+
